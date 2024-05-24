@@ -1,0 +1,38 @@
+{
+  "canisters": {
+    "bluenodesngwon_backend": {
+      "build": "python -m kybra bluenodesngwon_backend src/bluenodesngwon_backend/src/main.py src/bluenodesngwon_backend/bluenodesngwon_backend.did",
+      "candid": "src/bluenodesngwon_backend/bluenodesngwon_backend.did",
+      "gzip": true,
+      "post_install": ".kybra/bluenodesngwon_backend/post_install.sh",
+      "tech_stack": {
+        "cdk": {
+          "kybra": {}
+        },
+        "language": {
+          "python": {}
+        }
+      },
+      "type": "custom",
+      "wasm": ".kybra/bluenodesngwon_backend/bluenodesngwon_backend.wasm"
+    },
+    "bluenodesngwon_frontend": {
+      "dependencies": [
+        "bluenodesngwon_backend"
+      ],
+      "source": [
+        "src/bluenodesngwon_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "bluenodesngwon_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
